@@ -29,7 +29,7 @@
 			<div id="header">
                 <h1>Instead of <em>takedowns</em> we <strong>KeepUp</strong></h1>
                 
-                <form action="http://keepupapi.pedelen.com/add" method="post">
+                <form action="http://kuapi.pedelen.com/add" method="post">
                     <div class="form-group">
                         <input type="text" class="form-control" name="url" placeholder="https://www.youtube.com/watch?v=yourvideo">
                     </div>
@@ -47,6 +47,7 @@
                 <img id="yt" src="./assets/youtube_fail.jpg"/>
 
                 <h4>When people report your videos, you often have no recourse. Take the power back.</h4>
+                <a class="learn-more" href="http://keepup.pedelen.com/learnmore.html">Learn more...</a>
             </div>
             <div class="main-box" id="two">
                 <h2>Protect yourself and your presence with the decentralized power of KeepUp.</h2>
@@ -56,6 +57,7 @@
                 <i class="fa fa-globe main-ic" aria-hidden="true"></i>
                 </div>
                 <h4>KeepUp downloads your videos and seeds them to the world when they are frauduently taken down.</h4>
+                <a class="learn-more" href="/learnmore.html">Learn more...</a>
             </div>
 
             <div id="scroll">
@@ -75,8 +77,10 @@
                     <i class="fa fa-check-circle status-icon" aria-hidden="true"></i>
                 </div>
                 <div ng-if="!video.status">
-                    <a href="/public/torrents/{{video.title}}.torrent">Video unavailable. Download torrent here!</a>
+                    <a href="/public/{{video.title}}.torrent">Video unavailable. Download torrent here!</a>
                     <i class="fa fa-times-circle status-icon" aria-hidden="true"></i>
+                    <br>
+                    <a class="link-cool" href="http://keepup.pedelen.com/torrent.html?http://keepup.pedelen.com/public/{{video.title}}.torrent">Or stream the torrent here!</a>
                 </div>
             </div>
         </section>

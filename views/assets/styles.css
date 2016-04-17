@@ -146,12 +146,14 @@ main{
 
 .video-list{
     width: 31%;
+    height: 115px;
     margin: 15px 18px;
     background: rgba(50,50,50,.6);
     border-radius: 6px;
     display: inline-block;
     box-sizing: border-box;
     padding: 15px;
+    float: left;
 }
     .video-link{
         display: inline;
@@ -160,6 +162,7 @@ main{
     .status-icon{
         display: inline;
         float: right;
+        font-size: 1.5em;
     }
         .fa-check-circle{
             color: green;
@@ -167,3 +170,25 @@ main{
         .fa-times-circle{
             color:red;
         }
+        .link-cool{
+            color: #030303;
+        }
+
+#inner-info{
+    min-height: 800px;
+    width: 1600px;
+    background: rgba(0,0,0,.7);
+    margin: 10px auto 45px;
+    border-radius: 6px;
+    padding: 20px;
+}
+    p{
+        color: #D1D1D1;
+        width: 60%;
+        margin: 10px auto;
+    }
+    #inner-info h5 {
+        width: 60%;
+        margin: 10px auto;
+        text-align: center;
+    }

@@ -34,10 +34,27 @@ module.exports = function() {
 						id: id
 					}).then(function(data) {
 						var d = JSON.parse(data);
-						var status = d.items[0].status.uploadStatus;
-						console.log(status);
-						
-						if(!status==='processed'){
+						if(d.pageInfo.totalResults === 0){
+             console.log("Alert! Video removed!");
+            //change file status
+							video.status = false;
+							video.save(function(err) {
+								if(err)
+									console.log(err);
+							});
+
+							//create torrent
+							var localPath = './views/public/' + video.title + '.mp4';
+							createTorrent(localPath, function(err, torrent) {
+								if(err) {
+									console.log(err);
+								} else {
+									var tName = './views/public/' + video.title + '.torrent';
+									fs.writeFile(tName, torrent);
+								}
+							});
+						}else if(!d.items[0].status.uploadStatus==='processed'){
+              console.log("Alert! Video removed!");
 							//change file status
 							video.status = false;
 							video.save(function(err) {
@@ -46,12 +63,12 @@ module.exports = function() {
 							});
 
 							//create torrent
-							var localPath = './views/public/videos/' + video.title + '.mp4';
+							var localPath = './views/public/' + video.title + '.mp4';
 							createTorrent(localPath, function(err, torrent) {
 								if(err) {
 									console.log(err);
 								} else {
-									var tName = './views/public/torrents/' + video.title + '.torrent';
+									var tName = './views/public/' + video.title + '.torrent';
 									fs.writeFile(tName, torrent);
 								}
 							});

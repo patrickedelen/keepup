@@ -45,7 +45,7 @@ module.exports = function(app) {
 			//save video with ytdl
 			console.log('Saving ' + title);
 			ytdl(vUrl, { filter: function(format) { return format.container === 'mp4'; } })
-	  			.pipe(fs.createWriteStream('./views/public/videos' + title + '.mp4'));
+	  			.pipe(fs.createWriteStream('./views/public/' + title + '.mp4'));
 			console.log('Finished saving...');
 
 			//save to MongoDB
@@ -59,7 +59,7 @@ module.exports = function(app) {
 				if(err)
 					res.send(err);
 
-				res.send("Video added!");
+				res.redirect('http://keepup.pedelen.com');
 			});
 		});
 		 
@@ -111,12 +111,12 @@ module.exports = function(app) {
 							});
 
 							//create torrent
-							var localPath = './app/videos/' + video.title + '.mp4';
+							var localPath = './views/public/' + video.title + '.mp4';
 							createTorrent(localPath, function(err, torrent) {
 								if(err) {
 									console.log(err);
 								} else {
-									var tName = './app/torrents/' + video.title + '.torrent';
+									var tName = './views/public/' + video.title + '.torrent';
 									fs.writeFile(tName, torrent);
 								}
 							});
