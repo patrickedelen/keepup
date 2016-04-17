@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-us" ng-app="myApp">
+    <head>
+        <title>KeepUp</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta charset="UTF-8">
+
+        <!-- load bootstrap and fontawesome via CDN -->
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="./assets/styles.css" />
+        <style>
+            html, body, input, select, textarea
+            {
+                font-size: 1.05em;
+            }
+        </style>
+        
+        <!-- load angular via CDN -->
+        <script src="//code.angularjs.org/1.3.0-rc.1/angular.min.js"></script>
+        <script src="//code.angularjs.org/1.3.0-rc.1/angular-route.min.js"></script>
+        <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+        <script src="./assets/app.js"></script>
+        
+    </head>
+    <body id="center">
+        <header>
+			<div id="header">
+                <h1>Instead of <em>takedowns</em> we <strong>KeepUp</strong></h1>
+                
+                <form action="http://keepupapi.pedelen.com/add" method="post">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="url" placeholder="https://www.youtube.com/watch?v=yourvideo">
+                    </div>
+                    <div id="button-container" class="form-group">
+                        <button type="submit" id="subButton" class="btn">Submit</button>
+                    </div>
+                </form>
+
+            </div>
+		</header>
+        <main>
+            <div class="main-box" id="one">
+                <h2>Companies and individuals can take your videos down for virtually no reason.</h2>
+
+                <img id="yt" src="./assets/youtube_fail.jpg"/>
+
+                <h4>When people report your videos, you often have no recourse. Take the power back.</h4>
+            </div>
+            <div class="main-box" id="two">
+                <h2>Protect yourself and your presence with the decentralized power of KeepUp.</h2>
+                <div id="icons">
+                <i class="fa fa-video-camera main-ic" aria-hidden="true"></i>
+                <i class="fa fa-server main-ic" aria-hidden="true"></i>
+                <i class="fa fa-globe main-ic" aria-hidden="true"></i>
+                </div>
+                <h4>KeepUp downloads your videos and seeds them to the world when they are frauduently taken down.</h4>
+            </div>
+
+            <div id="scroll">
+                <a id="scroll-link" href="#videos">Scroll for more</a>
+                <br>
+                <i class="fa fa-angle-down" aria-hidden="true"></i>
+
+            </div>
+
+        </main>
+
+        <section id="videos" ng-controller="mainController">
+            <div ng-repeat="video in videos">
+                <h3>{{video}}</h3>
+            </div>
+        </section>
+
+    </body>
+</html>

@@ -19,7 +19,7 @@ var youtube = ytapi({
 
 module.exports = function(app) {
 	//allow cross region resource sharing
-	app.all('/add', function(req, res, next) {
+	app.all('/all', function(req, res, next) {
 	  res.header("Access-Control-Allow-Origin", "*");
 	  res.header("Access-Control-Allow-Headers", "X-Requested-With");
 	  next();
@@ -72,7 +72,6 @@ module.exports = function(app) {
 				res.send(err);
 
 			res.json(videos);
-			console.log(videos);
 		});
 	});
 
