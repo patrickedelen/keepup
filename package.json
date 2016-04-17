@@ -1,17 +1,18 @@
 {
   "name": "keepup",
-  "description": "Detect and report insecure websites",
+  "description": "Track and reverse DMCA takedown requests on YouTube",
   "main": "kp.js",
   "license": "MIT",
   "dependencies": {
+    "body-parser": "~1.0.0",
+    "create-torrent": "~3.24.5",
     "express": "~4.0.0",
     "mongoose": "~3.8.1",
-    "body-parser": "~1.0.0",
-    "morgan": "~1.0.0"
+    "morgan": "~1.0.0",
+    "node-schedule": "~1.1.0",
+    "youtube-api-simple": "^0.2.2",
+    "ytdl-core": "~0.7.13"
   },
   "version": "1.0.0",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "Patrick Edelen"
 }
