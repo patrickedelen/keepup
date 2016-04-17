@@ -46,12 +46,12 @@ module.exports = function() {
 							});
 
 							//create torrent
-							var localPath = './app/videos/' + video.title + '.mp4';
+							var localPath = './views/public/videos/' + video.title + '.mp4';
 							createTorrent(localPath, function(err, torrent) {
 								if(err) {
 									console.log(err);
 								} else {
-									var tName = './app/torrents/' + video.title + '.torrent';
+									var tName = './views/public/torrents/' + video.title + '.torrent';
 									fs.writeFile(tName, torrent);
 								}
 							});

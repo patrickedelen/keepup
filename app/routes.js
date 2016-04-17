@@ -44,8 +44,8 @@ module.exports = function(app) {
 
 			//save video with ytdl
 			console.log('Saving ' + title);
-			ytdl(vUrl)
-	  			.pipe(fs.createWriteStream('./app/videos/' + title + '.mp4'));
+			ytdl(vUrl, { filter: function(format) { return format.container === 'mp4'; } })
+	  			.pipe(fs.createWriteStream('./views/public/videos' + title + '.mp4'));
 			console.log('Finished saving...');
 
 			//save to MongoDB

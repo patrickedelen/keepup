@@ -68,8 +68,16 @@
         </main>
 
         <section id="videos" ng-controller="mainController">
-            <div ng-repeat="video in videos">
-                <h3>{{video}}</h3>
+        <h3>Videos</h3>
+            <div ng-repeat="video in videos" class="video-list">
+                <a class="video-link" href="{{video.url}}">{{video.title}}</a>
+                <div ng-if="video.status">
+                    <i class="fa fa-check-circle status-icon" aria-hidden="true"></i>
+                </div>
+                <div ng-if="!video.status">
+                    <a href="/public/torrents/{{video.title}}.torrent">Video unavailable. Download torrent here!</a>
+                    <i class="fa fa-times-circle status-icon" aria-hidden="true"></i>
+                </div>
             </div>
         </section>
 

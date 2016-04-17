@@ -31,7 +31,7 @@ var check = require('./app/check.js');
 
 var s = schedule.scheduleJob('* * * * *', function(){
   console.log('Running the schedule...');
-  //check();
+  check();
 });
 
 // node startup

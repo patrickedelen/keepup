@@ -130,10 +130,10 @@ main{
         }
 
 #videos{
-    height: 800px;
+    min-height: 800px;
     width: 1600px;
     background: rgba(0,0,0,.7);
-    margin: 10px auto;
+    margin: 10px auto 45px;
     border-radius: 6px;
     padding: 20px;
 }
@@ -141,4 +141,29 @@ main{
         color: #D2D2D2;
         text-align: center;
         font-size: 2em;
+        margin-bottom: 20px;
     }
+
+.video-list{
+    width: 31%;
+    margin: 15px 18px;
+    background: rgba(50,50,50,.6);
+    border-radius: 6px;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 15px;
+}
+    .video-link{
+        display: inline;
+        font-size: 1.4em;
+    }
+    .status-icon{
+        display: inline;
+        float: right;
+    }
+        .fa-check-circle{
+            color: green;
+        }
+        .fa-times-circle{
+            color:red;
+        }
